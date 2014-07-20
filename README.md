@@ -8,7 +8,19 @@ Pontos a serem abordados:
 
 - Selectores
 - Eventos
-- Exemplos	
+- Efeitos
+- Manipulações
+- Funções
+- Exemplos
+
+
+Links de Referências:
+--------------------
+
+- http://api.jquery.com/
+- http://jqapi.com/
+- http://www.w3schools.com/jQuery/
+
 
 Link para Download:
 -------------------
