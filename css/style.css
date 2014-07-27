@@ -1,0 +1,23 @@
+
+#block1, #block2, #block3 {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+#block1 {
+    background: green;
+}
+
+#block2 {
+    background: yellow;
+    display: none;
+}
+
+#block3 {
+    background: blue;
+}
+
+#container {
+    height: 75px;
+}
