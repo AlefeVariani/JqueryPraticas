@@ -1,0 +1,31 @@
+<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+
+<h1 id="h1">Efeito h1</h1>
+<button id="button1">h1 slideToggle</button>
+<br/>
+<p id="p2">Efeito p2</p>
+<button id="button2">slideUp</button>
+<br/>
+<p class="p3">Efeito p3</p>
+<button id="button3">fadeToggle</button>
+
+<script type="text/javascript">
+
+$(function () {
+
+	$('#button1').on('click', function(){
+		$("#h1").slideToggle("slow");
+	});
+
+	function slideUp(){
+		$("#p2").slideUp("fast"); 
+	}
+	$('#button2').on('click', slideUp);
+
+	$('#button3').click(function(){
+		$(".p3").fadeToggle(400).css('color', '#C0C0C0'); 
+	});
+	
+});
+
+</script>
