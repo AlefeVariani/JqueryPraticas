@@ -9,6 +9,16 @@
 <p class="p3">Efeito p3</p>
 <button id="button3">fadeToggle</button>
 
+<br/>
+<br/>
+
+<div id="div-mens" style="color:blue; border: 5px solid black;">
+	<p>ÇALSKDFALSKDFJAÇLSDKFJALKDFJALSDKFJALSKDFJALSDKF</p>
+</div>
+
+<button id="but-mens">Fade In Out</button>
+
+
 <script type="text/javascript">
 
 $(function () {
@@ -25,7 +35,11 @@ $(function () {
 	$('#button3').click(function(){
 		$(".p3").fadeToggle(400).css('color', '#C0C0C0'); 
 	});
-	
+
+	$('#div-mens').hide();
+	$('#but-mens').on('click',function(){
+		$('#div-mens').fadeIn(800).delay(1000).fadeOut(800);
+	});	
 });
 
 </script>

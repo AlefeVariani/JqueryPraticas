@@ -1,0 +1,42 @@
+<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<div id="container">
+	<div id="block1">Bloco 1</div>
+	<div id="block2">Bloco 2</div>
+	<div id="block3">Bloco 3</div>
+</div>
+<p>
+	<button id="for-block1">Esconder bloco 1</button>
+	<button id="for-block2">Exibir bloco 2</button>
+	<button id="for-block3">Alternar bloco 3</button>
+	<button id="fadeout-block1">Esconder bloco 1 (animação)</button>
+	<button id="fadein-block2">Exibir bloco 2 (animação)</button>
+</p>
+
+<br>
+<button>abc</button>
+
+<script type="text/javascript">
+$(function(){
+	$("#for-block1").click(function(){
+		$("#block1").hide();
+	});
+
+	$("#for-block2").click(function(){
+		$("#block2").show();
+	});
+
+	$("#for-block3").click(function(){
+		$("#block3").toggle();
+	});
+
+	$("#fadeout-block1").click(function(){
+		$("#block1").show().hide("slow");
+	});
+
+	$("#fadein-block2").click(function(){
+		$("#block2").hide().show("slow");
+	});
+});
+</script>

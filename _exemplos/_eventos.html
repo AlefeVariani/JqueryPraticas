@@ -1,42 +1,121 @@
 <script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
+<!-- Exemplo Click -->
 <div id="container">
-	<div id="block1">Bloco 1</div>
-	<div id="block2">Bloco 2</div>
 	<div id="block3">Bloco 3</div>
 </div>
 <p>
-	<button id="for-block1">Esconder bloco 1</button>
-	<button id="for-block2">Exibir bloco 2</button>
 	<button id="for-block3">Alternar bloco 3</button>
-	<button id="fadeout-block1">Esconder bloco 1 (animação)</button>
-	<button id="fadein-block2">Exibir bloco 2 (animação)</button>
 </p>
 
-<br>
-<button>abc</button>
+<!-- Exemplo dblclick -->
+<div id="div-clo">
+	<div id="cont" style="border: 3px solid black;">
+		<p>Div p</p>
+	</div>
+</div>
+
+<!-- Exemplo Mouseover Mouseout-->
+<ul>
+	<li>Intro</li>
+	<li>Conteudo</li>
+</ul>
+
+<!-- Exemplo Mouseup Mousedown-->
+<p id="p-mouse">Click e Solte</p>
+
+<!-- Exemplo Mouseover Mouseout-->
+<div class="out overout">
+	<p>mexa seu mouse</p>
+	<div class="in overout"><p>mexa seu mouse</p></div>
+</div>
+
+<!-- Exemplo Mouseenter Mouseleave-->
+<div class="out enterleave">
+	<p>mexa seu mouse</p>
+	<div class="in enterleave"><p>mexa seu mouse</p></div>
+</div>
+
+<!-- Exemplo Toggle -->
+<div>
+	<p >Oi!</p>
+	<p id="p-too" style="display: none">Tchau!</p>
+	<button id="toggle">Toggle</button>
+</div>
+
+<!-- Exemplo Focus -->
+<p><input type="text"> <span>focus aqui</span></p>
+<p><input type="password"> <span>focus aqui</span></p>
+
+<!-- Exemplo Keypres -->
+Seu nome: <input class="input" type="text">
+<p>Keypresses: <span class="span">0</span></p>
+
 
 <script type="text/javascript">
-$(function(){
-	$("#for-block1").click(function(){
-		$("#block1").hide();
-	});
 
-	$("#for-block2").click(function(){
-		$("#block2").show();
-	});
-
+$(function() {
+	
+	// Click
 	$("#for-block3").click(function(){
 		$("#block3").toggle();
 	});
 
-	$("#fadeout-block1").click(function(){
-		$("#block1").show().hide("slow");
+	// Dbclick
+	$('#div-clo').dblclick(function(){
+		$("#cont").clone().appendTo('#div-clo').append('<p>Clone</p>');
 	});
 
-	$("#fadein-block2").click(function(){
-		$("#block2").hide().show("slow");
+	// Hover
+	$('li').hover(function(){
+		$(this).append($('<span>****</span>'));
+	}, function(){
+		$(this).find("span:last").remove();
+	});
+
+	// Mouseup e Mousedown
+	$('#p-mouse')
+	.mouseup(function(){
+		$(this).append("<span style='border:1px solid blue;'> mouseup </span>");
+	})
+	.mousedown(function(){
+		$(this).append("<span style='border:1px solid red;'> mousedown </span>");
+	});
+
+	// Mouseover e Mouseout
+	$( "div.overout" )
+	.mouseover(function() {
+		$( "p:first", this ).text( "mouse over" );
+	})
+	.mouseout(function() {
+		$( "p:first", this ).text( "mouse out" );
+	});
+
+	// Mouseenter e Mouseleave
+	$( "div.enterleave" )
+	.mouseenter(function() {
+		$( "p:first", this ).text( "mouse enter" );
+	})
+	.mouseleave(function() {
+		$( "p:first", this ).text( "mouse leave" );
+	});
+	
+	// Toggle
+	$("#toggle").click(function() {
+		$("#p-too").toggle();
+	});
+
+	// Focus
+	$( "input" ).focus(function() {
+		$(this).next("span").css("display", "inline").fadeOut(1000);
+	});
+
+	// Keypress
+	var i=0;
+	$(".input").keypress(function(){
+		$(".span").text(i+=1);
 	});
 });
+
 </script>
