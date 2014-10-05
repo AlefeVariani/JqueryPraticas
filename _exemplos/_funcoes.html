@@ -1,0 +1,39 @@
+<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+<meta charset="utf8">
+<div>
+	<p>Texto1</p>
+	<p id="p2" >Texto2</p>
+	<button onclick="funcaoBotao()">Botão </button>
+	<button onclick="funcaoBotaoAdd()">Botão Add</button>
+</div>
+
+<script type="text/javascript">
+
+/* Declaração de Funções simples em JavaScript */
+function funcaoBotao() {
+	$('p:first').empty();
+	alert('Usando uma funcao .empty para limpar o conteúdo da tag p');
+}
+
+var funcaoBotaoAdd = function () {
+	$('p:first').append('Texto1');
+	alert('Usando .append para adicionar um novo conteúdo na tag p');
+}
+
+/* Exemplo de plugins criados para jQuery ($.fn = $.prototype) */
+
+$.fn.limparConteudo = function() {
+	//seu codigo, seu plugin
+	this.empty();
+};
+
+$('#p2').limparConteudo();
+
+$.prototype.adicionaConteudo = function(conteudo) {
+	//seu codigo, seu plugin
+	this.append(conteudo);
+};
+
+$('#p2').adicionaConteudo('Texto2');
+
+</script>
