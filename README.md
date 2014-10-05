@@ -2,6 +2,7 @@
 Jquery - Framework Javascript
 =============================
 
+Além de ser um framework muito fácil desse usar possui uma Documentação muito boa. 
 
 Pontos a serem abordados:
 ------------------------
@@ -20,6 +21,7 @@ Links de Referências:
 - http://api.jquery.com/
 - http://jqapi.com/
 - http://www.w3schools.com/jQuery/
+- http://overapi.com/jquery/
 
 
 Link para Download:
