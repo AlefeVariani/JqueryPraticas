@@ -2,7 +2,7 @@
 Jquery - Framework Javascript
 =============================
 
-Além de ser um framework muito fácil desse usar possui uma Documentação muito boa. 
+Além de ser um framework muito fácil de usar, possui uma Documentação muito boa. 
 
 Pontos a serem abordados:
 ------------------------
